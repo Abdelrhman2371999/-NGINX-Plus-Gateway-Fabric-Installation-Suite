@@ -457,7 +457,7 @@ For production deployments, consider:
 
 ---
 
-*Last Updated: $(date +%Y-%m-%d)*  
+
 *NGINX Gateway Fabric Version: 2.2.2*  
 *Kubernetes Version: 1.24+*  
 
