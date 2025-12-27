@@ -1,6 +1,3 @@
-Here's the complete enhanced README.md in Markdown format ready to copy:
-
-```markdown
 <div align="center">
 
 # 🚀 NGINX Plus & Gateway Fabric Installation Suite
@@ -61,9 +58,7 @@ graph TB
     
     style D1 fill:#e1f5fe,stroke:#01579b
     style D2 fill:#f3e5f5,stroke:#4a148c
-```
 
----
 
 ## 📚 Documentation Guide
 
@@ -208,13 +203,14 @@ cd NGINX-Plus-Gateway-Fabric-Installation-Suite
 
 # 4. Test deployment
 kubectl get all -n ingress-nginx
-```
+
 
 </td>
 <td width="50%">
 
 ### **Option 2: Enterprise Stack**
-```bash
+
+
 # 1. Install NGINX Plus
 # Follow Installing_NGINX_Plus_on_Ubuntu.md
 
@@ -227,13 +223,13 @@ helm install nginx-gateway nginx-stable/nginx-gateway-fabric
 
 # 4. Configure advanced features
 # Follow Advanced_NGF-Configuration-Guide.md
-```
+
 
 </td>
 </tr>
 </table>
 
----
+
 
 ## 🛠️ Tools & Technologies
 
@@ -252,17 +248,17 @@ helm install nginx-gateway nginx-stable/nginx-gateway-fabric
 
 </div>
 
----
+
 
 ## 📊 Performance Dashboard
 
-```mermaid
+
 xychart-beta
     title "Performance Comparison (Requests Per Second)"
     x-axis ["Nginx Ingress", "NGF Default", "NGF Optimized"]
     y-axis "RPS" 0 --> 13000
     bar [8000, 8500, 12000]
-```
+
 
 | Metric | Nginx Ingress | NGF Default | NGF Optimized |
 |--------|--------------|-------------|---------------|
@@ -274,7 +270,7 @@ xychart-beta
 
 *Test Environment: 4 vCPU, 8GB RAM, Ubuntu 22.04*
 
----
+
 
 ## 🔍 Diagnostic Commands
 
