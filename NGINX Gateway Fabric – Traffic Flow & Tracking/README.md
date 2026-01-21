@@ -310,5 +310,3 @@ This setup provides:
 
 The cluster is now fully migrated and traffic is successfully handled
 by **NGINX Gateway Fabric**.
-
-```
