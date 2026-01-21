@@ -229,6 +229,3 @@ The environment now uses **NGINX Gateway Fabric** as the traffic entry point,
 providing a scalable and future-proof networking architecture.
 
 ```
-
-قولّي 👍
-```
