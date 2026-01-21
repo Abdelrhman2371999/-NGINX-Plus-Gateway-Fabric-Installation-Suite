@@ -1,9 +1,3 @@
-تمام 
-`## Before Migration – NGINX Ingress Controller`
-
----
-
-```md
 ## Before Migration – NGINX Ingress Controller
 
 ### 1. Overview
@@ -14,7 +8,6 @@ Before migrating to **NGINX Gateway Fabric**, the cluster was using the
 Traffic routing was defined using **Ingress resources**, and advanced behavior
 was controlled mainly through **Ingress annotations**.
 
----
 
 ## 2. Architecture (Before Migration)
 
