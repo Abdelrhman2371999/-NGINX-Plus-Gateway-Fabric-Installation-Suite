@@ -1,4 +1,4 @@
-````md
+
 # Migration from NGINX Ingress Controller to NGINX Gateway Fabric
 
 ## 1. Overview
@@ -13,7 +13,7 @@ All tool behavior, scope, and limitations are based on the following reference:
 🔗 **Official ingress2gateway Documentation**  
 https://github.com/kubernetes-sigs/ingress2gateway/blob/v0.5.0/README.md
 
----
+
 
 ## 2. Migration Objective
 
