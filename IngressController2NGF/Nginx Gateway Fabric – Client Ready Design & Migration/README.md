@@ -19,16 +19,20 @@ The goal is to achieve **security, scalability, and operational clarity** while 
 Client
   |
   v
-F5 (TLS / WAF optional)
-  |
+F5 (TLS termination / WAF optional)
+  |  - Edge Rate Limiting (DoS / brute force, per IP/URI)
+  |  - Adds X-Forwarded-For (real client IP)
   v
 NGINX Gateway Fabric (Routing, mTLS, policies)
-  |
+  |  - Route policies (timeouts/retries/weights)
+  |  - Optional simple rate limits (non-critical)
   v
-API Gateway / Validation Layer   <-- Schema Validation here
-  |
+API Gateway / Validation Layer  <── Schema Validation happens here
+  |  - Schema validation (enable/bypass per policy)
+  |  - Centralized Rate Limiting (per API key/user/token) + shared store (Redis)
   v
 Backend Services
+
 ```
 
 ---
