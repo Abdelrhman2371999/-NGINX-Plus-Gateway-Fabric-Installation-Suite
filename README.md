@@ -179,6 +179,48 @@ graph TD
     R --> G4[Kubernetes Cluster Installation]
     R --> G5[Troubleshooting & Issues]
 ```
+```
+.
+├── CheckList/
+│   └── README.md
+│
+├── Custom Configuration in NGINX Gateway Fabric/
+│   ├── README.md
+│   └── Advanced Custom Configuration/
+│       └── README.md
+│
+├── Dashboards/
+│   ├── README.md
+│   └── nginx-grafana-dashboard-k8s-*.json
+│
+├── IngressController2NGF/
+│   ├── README.md
+│   ├── Before Migration – NGINX Ingress/
+│   │   └── README.md
+│   └── NGINX Gateway Fabric – Client Side/
+│       └── README.md
+│
+├── Integrating Kubernetes with Dynatrace/
+│   └── README.md
+│
+├── Kubernetes NGINX Ingress Controller V1/
+│   └── Setup.md
+│
+├── Kubernetes NGINX Ingress Controller V2/
+│   └── Setup.md
+│
+├── NGINX Gateway Fabric – Traffic Flow & Tracking/
+│   └── README.md
+│
+├── Advanced-NGF-Configuration-Guide.md
+├── Installing_NGINX_Plus-on-Ubuntu.md
+├── KubernetesClusterInstallationGuide.md
+├── NGF-Installation-and-Testing.md
+├── Troubleshooting.md
+├── iusse.md
+└── README.md   (This file)
+```
+
 ---
 
 ## 🚀 Quick Start Paths
