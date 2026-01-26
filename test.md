@@ -268,4 +268,7 @@ Each issue includes:
 > Maintained as a practical, real-world reference for Kubernetes
 > traffic management and observability.
 
-```
+---
+
+**Author:** Abdelrhman Hamed Mousaa  
+*Kubernetes • NGINX • Gateway API • Observability*
