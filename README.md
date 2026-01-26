@@ -138,7 +138,7 @@ sequenceDiagram
 
 ## 📂 Repository Structure
 
-```
+
 graph TD
     R[NGINX Plus & Gateway Fabric Installation Suite]
 
@@ -179,8 +179,6 @@ graph TD
     R --> G4[Kubernetes Cluster Installation]
     R --> G5[Troubleshooting & Issues]
 
-
-```
 
 ---
 
