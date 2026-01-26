@@ -139,45 +139,46 @@ sequenceDiagram
 ## 📂 Repository Structure
 
 ```
-.
-├── CheckList/
-│   └── README.md
-│
-├── Custom Configuration in NGINX Gateway Fabric/
-│   ├── README.md
-│   └── Advanced Custom Configuration/
-│       └── README.md
-│
-├── Dashboards/
-│   ├── README.md
-│   └── nginx-grafana-dashboard-k8s-*.json
-│
-├── IngressController2NGF/
-│   ├── README.md
-│   ├── Before Migration – NGINX Ingress/
-│   │   └── README.md
-│   └── NGINX Gateway Fabric – Client Side/
-│       └── README.md
-│
-├── Integrating Kubernetes with Dynatrace/
-│   └── README.md
-│
-├── Kubernetes NGINX Ingress Controller V1/
-│   └── Setup.md
-│
-├── Kubernetes NGINX Ingress Controller V2/
-│   └── Setup.md
-│
-├── NGINX Gateway Fabric – Traffic Flow & Tracking/
-│   └── README.md
-│
-├── Advanced-NGF-Configuration-Guide.md
-├── Installing_NGINX_Plus-on-Ubuntu.md
-├── KubernetesClusterInstallationGuide.md
-├── NGF-Installation-and-Testing.md
-├── Troubleshooting.md
-├── iusse.md
-└── README.md   (This file)
+graph TD
+    R[NGINX Plus & Gateway Fabric Installation Suite]
+
+    R --> C[CheckList]
+    C --> C1[README.md]
+
+    R --> CC[Custom Configuration<br/>NGINX Gateway Fabric]
+    CC --> CC1[README.md]
+    CC --> CC2[Advanced Custom Configuration]
+    CC2 --> CC21[README.md]
+
+    R --> D[Dashboards]
+    D --> D1[README.md]
+    D --> D2[Grafana / K8s Dashboards]
+
+    R --> M[IngressController2NGF]
+    M --> M1[README.md]
+    M --> M2[Before Migration<br/>NGINX Ingress]
+    M2 --> M21[README.md]
+    M --> M3[NGINX Gateway Fabric<br/>Client Side]
+    M3 --> M31[README.md]
+
+    R --> DT[Integrating Kubernetes<br/>with Dynatrace]
+    DT --> DT1[README.md]
+
+    R --> I1[Kubernetes NGINX Ingress V1]
+    I1 --> I11[Setup.md]
+
+    R --> I2[Kubernetes NGINX Ingress V2]
+    I2 --> I21[Setup.md]
+
+    R --> TF[NGINX Gateway Fabric<br/>Traffic Flow & Tracking]
+    TF --> TF1[README.md]
+
+    R --> G1[NGF Installation & Testing]
+    R --> G2[Advanced NGF Configuration]
+    R --> G3[NGINX Plus Installation]
+    R --> G4[Kubernetes Cluster Installation]
+    R --> G5[Troubleshooting & Issues]
+
 
 ```
 
