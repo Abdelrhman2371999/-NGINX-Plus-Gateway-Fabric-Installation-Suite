@@ -1,13 +1,3 @@
-# NGINX Plus & Gateway Fabric Installation Suite
-
-An **end-to-end, production-ready installation and migration suite** for running
-**NGINX Plus**, **Ingress**, and **Gateway API (NGINX Gateway Fabric)** on Kubernetes,
-with **full observability using Dynatrace**.
-
-This repository is designed for **Integrators, DevOps, SREs, and Platform Engineers**
-who want a **clean, repeatable, and well-documented path** from classic Ingress
-to Gateway API with enterprise-grade monitoring.
-
 # 🚀 NGINX Plus & Gateway Fabric Installation Suite
 
 <div align="center">
@@ -24,7 +14,7 @@ to Gateway API with enterprise-grade monitoring.
 
 </div>
 
----
+
 
 ## 📌 Overview
 
@@ -33,7 +23,7 @@ An **end-to-end, production-ready installation and migration suite** for running
 with **enterprise-grade observability using Dynatrace**.
 
 This repository is designed for **Integrators, DevOps, SREs, and Platform Engineers**  
-who want a **clean, repeatable, and real-world path** from classic Ingress  
+who want a **clean, repeatable, real-world path** from classic Ingress  
 to Gateway API — **with visibility, tracing, and troubleshooting built-in**.
 
 ---
@@ -41,7 +31,6 @@ to Gateway API — **with visibility, tracing, and troubleshooting built-in**.
 ## 📑 Table of Contents
 
 - [📌 Overview](#-overview)
-- [📌 What This Repository Covers](#-what-this-repository-covers)
 - [🧭 Project Scope](#-project-scope)
 - [🏗️ High-Level Architecture](#-high-level-architecture)
 - [🌐 Request Flow Animation](#-request-flow-animation)
@@ -52,22 +41,21 @@ to Gateway API — **with visibility, tracing, and troubleshooting built-in**.
 - [✅ Validation Checklist](#-validation-checklist)
 - [🎯 Target Audience](#-target-audience)
 - [📌 Use Cases](#-use-cases)
-- [📎 Next Enhancements](#-next-enhancements)
+- [📎 Next Enhancements](#-next-enhancements-planned)
 - [📜 Status](#-status)
-
----
 
 ---
 
 ## 🧭 Project Scope
 
-This project covers **north-south traffic management** and **full observability**
+This project covers **north–south traffic management** and **full observability**
 across the Kubernetes stack:
 
 - External traffic ingress
 - Gateway API routing
 - Application workloads
 - Cluster & application monitoring
+- End-to-end request visibility
 
 ---
 
@@ -76,7 +64,6 @@ across the Kubernetes stack:
 ```mermaid
 flowchart LR
     U[End Users / Clients]
-
     U --> LB[External Load Balancer]
 
     subgraph Kubernetes_Cluster[Kubernetes Cluster]
@@ -101,6 +88,8 @@ flowchart LR
     DT --> TRACE[Distributed Tracing]
 ````
 
+---
+
 ## 🌐 Request Flow Animation
 
 The following sequence diagram shows how a request travels from the **end user**
@@ -110,10 +99,10 @@ and how telemetry is shipped to **Dynatrace**.
 ```mermaid
 sequenceDiagram
     autonumber
-    participant U as User/Client
+    participant U as User / Client
     participant LB as External Load Balancer
     participant GW as NGINX Gateway Fabric
-    participant R as Gateway API (HTTPRoute/TLSRoute)
+    participant R as Gateway API (HTTPRoute / TLSRoute)
     participant SVC as Kubernetes Service
     participant POD as Application Pod
     participant OA as Dynatrace OneAgent
@@ -121,52 +110,29 @@ sequenceDiagram
     participant DT as Dynatrace SaaS
 
     U->>LB: HTTPS Request
-    LB->>GW: Forward traffic (L4/L7)
+    LB->>GW: Forward traffic (L4 / L7)
     GW->>R: Match route rules
     R->>SVC: Route to backend Service
-    SVC->>POD: Select Pod (Endpoints)
+    SVC->>POD: Select Pod
     POD-->>SVC: Response
     SVC-->>GW: Response
     GW-->>LB: Response
     LB-->>U: Final Response
 
-    par Observability (in parallel)
-        POD-->>OA: Metrics/Traces/Logs
-        OA-->>AG: Send telemetry (cluster-local)
-        AG-->>DT: Upload to Dynatrace tenant
-        DT-->>DT: Correlate (Service Flow / Problems)
+    par Observability (Parallel)
+        POD-->>OA: Metrics / Traces / Logs
+        OA-->>AG: Cluster-local aggregation
+        AG-->>DT: Upload telemetry
+        DT-->>DT: Correlation & AI analysis
     end
-
 ```
-What you should see in Dynatrace
 
-Kubernetes → Overview: Nodes, Pods, CPU/Memory
+### What You Should See in Dynatrace
 
-Services / Service Flow: Request path & dependencies
-
-Problems: CPU/Memory saturation, failures, latency anomalies
-
-Traces: End-to-end request tracing (if tracing is enabled)
-
-### Architecture Explanation
-
-* **Ingress / Gateway Layer**
-
-  * NGINX Gateway Fabric acts as the **north–south entry point**
-  * Gateway API resources control routing and TLS
-
-* **Application Layer**
-
-  * Kubernetes Services route traffic to backend Pods
-
-* **Observability Layer**
-
-  * Dynatrace OneAgent runs on every node
-  * ActiveGate aggregates cluster telemetry
-
-* **Dynatrace Platform**
-
-  * Dashboards, Problems, Service Flow, Distributed Tracing
+* **Kubernetes → Overview:** Nodes, Pods, CPU, Memory
+* **Service Flow:** Request path & dependencies
+* **Problems:** CPU, memory, latency, failures
+* **Distributed Traces:** End-to-end request tracing
 
 ---
 
@@ -175,7 +141,7 @@ Traces: End-to-end request tracing (if tracing is enabled)
 ```
 .
 ├── IngressController2NGF/
-│   └── Ingress to Gateway API migration guide
+│   └── Ingress → Gateway API migration guide
 │
 ├── Dynatrace/
 │   └── Integrating Kubernetes with Dynatrace (Operator-based – Trial)
@@ -200,7 +166,7 @@ Traces: End-to-end request tracing (if tracing is enabled)
 ### 🔹 Path 2 – Ingress → Gateway Migration
 
 1. Install Ingress Controller
-2. Migrate resources using ingress2gateway
+2. Migrate using ingress2gateway
 3. Deploy NGINX Gateway Fabric
 4. Validate routing parity
 
@@ -208,14 +174,14 @@ Traces: End-to-end request tracing (if tracing is enabled)
 
 1. Install Dynatrace Operator
 2. Deploy DynaKube (OneAgent + ActiveGate)
-3. Observe cluster, services, and traffic
-4. Use dashboards and Problems for analysis
+3. Observe cluster & services
+4. Analyze traffic and problems
 
 ---
 
 ## 📊 Observability with Dynatrace
 
-This repository includes a **complete, real-world guide** for integrating Kubernetes
+This repository includes a **complete real-world guide** for integrating Kubernetes
 with Dynatrace using the **Operator + DynaKube** model.
 
 ### Features Enabled
@@ -237,11 +203,11 @@ Dynatrace/Integrating Kubernetes with Dynatrace (Operator-based – Trial).md
 
 ## 🛠️ Common Real-World Issues Covered
 
-* ActiveGate stuck in `Pending` (StorageClass missing)
+* ActiveGate stuck in `Pending` (missing StorageClass)
 * OneAgent `ImagePullBackOff`
 * Cluster shows `0 Nodes / 0 Pods`
-* Metrics server TLS issues (kubeadm)
-* Network & DNS validation
+* Metrics Server TLS issues (kubeadm)
+* Network & DNS validation problems
 
 Each issue includes:
 
@@ -258,7 +224,7 @@ Each issue includes:
 ✔ Traffic flowing end-to-end
 ✔ Dynatrace OneAgent on all nodes
 ✔ ActiveGate running
-✔ Kubernetes dashboards populated
+✔ Dashboards populated
 ✔ Problems automatically detected
 
 ---
@@ -302,3 +268,5 @@ Each issue includes:
 > Maintained as a practical, real-world reference for Kubernetes
 > traffic management and observability.
 
+```    👌
+```
