@@ -138,8 +138,8 @@ sequenceDiagram
 
 ## 📂 Repository Structure
 
-🗂️ Repository Structure – Visual Overview
-```graph TD
+```mermaid
+graph TD
     R[NGINX Plus & Gateway Fabric Installation Suite]
 
     R --> C[CheckList]
