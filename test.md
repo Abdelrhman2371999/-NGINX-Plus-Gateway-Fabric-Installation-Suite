@@ -268,5 +268,4 @@ Each issue includes:
 > Maintained as a practical, real-world reference for Kubernetes
 > traffic management and observability.
 
-```    👌
-
+```
