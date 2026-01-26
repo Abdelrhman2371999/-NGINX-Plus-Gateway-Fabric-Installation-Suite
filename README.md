@@ -140,16 +140,45 @@ sequenceDiagram
 
 ```
 .
+├── CheckList/
+│   └── README.md
+│
+├── Custom Configuration in NGINX Gateway Fabric/
+│   ├── README.md
+│   └── Advanced Custom Configuration/
+│       └── README.md
+│
+├── Dashboards/
+│   ├── README.md
+│   └── nginx-grafana-dashboard-k8s-*.json
+│
 ├── IngressController2NGF/
-│   └── Ingress → Gateway API migration guide
+│   ├── README.md
+│   ├── Before Migration – NGINX Ingress/
+│   │   └── README.md
+│   └── NGINX Gateway Fabric – Client Side/
+│       └── README.md
 │
-├── Dynatrace/
-│   └── Integrating Kubernetes with Dynatrace (Operator-based – Trial)
+├── Integrating Kubernetes with Dynatrace/
+│   └── README.md
 │
-├── NGF-Installation-and-Testing.md
+├── Kubernetes NGINX Ingress Controller V1/
+│   └── Setup.md
+│
+├── Kubernetes NGINX Ingress Controller V2/
+│   └── Setup.md
+│
+├── NGINX Gateway Fabric – Traffic Flow & Tracking/
+│   └── README.md
+│
 ├── Advanced-NGF-Configuration-Guide.md
+├── Installing_NGINX_Plus-on-Ubuntu.md
+├── KubernetesClusterInstallationGuide.md
+├── NGF-Installation-and-Testing.md
 ├── Troubleshooting.md
-└── README.md (this file)
+├── iusse.md
+└── README.md   (This file)
+
 ```
 
 ---
