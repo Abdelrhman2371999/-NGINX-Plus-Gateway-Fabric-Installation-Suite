@@ -64,7 +64,7 @@ flowchart LR
     DT --> PROB[Problems & Davis AI]
     DT --> TRACE[Distributed Tracing]
 ````
-```
+
 ## 🌐 Request Flow Animation
 
 The following sequence diagram shows how a request travels from the **end user**
